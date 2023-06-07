@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 20vh;
+    background-image: url(../marioImages/wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+}
+
+.theme-song {
+    display: none;
+}
+
+.container {
+    height: 100%;
+}
+
+.logo {
+    position: absolute;
+    padding-left: 41vw;
+    bottom: 75vh;
+    width: 60%;
+    z-index: 1;
+}
+
+.press-space {
+    position: absolute;
+    bottom: 160px;
+    padding-left: 400px;
+    z-index: 2;
+    animation: press-space-animation 1s infinite;
+}
+
+.game-board {
+    position: relative;
+    width: 80%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    border-radius: 20px;
+}
+
+#score {
+    font-family: "Super Mario 256";
+    margin: 10px;
+    z-index: 4;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    z-index: 3;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 500px;
+    animation: clouds-animation 4s infinite linear;
+    z-index: 1;
+}
+
+.pipe-animation {
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -500px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes press-space-animation {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: "Super Mario 256";
+    src: url(/marioFont/SuperMario256.ttf);
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+    .logo {
+        position: absolute;
+        right: 34vw;
+        bottom: 82vh;
+        width: 70%;
+        z-index: 1;
+    }
+
+    .game-board {
+        position: relative;
+        width: 92%;
+        height: 500px;
+        border-bottom: 15px solid rgb(35, 160, 35);
+        margin: 0 auto;
+        overflow: hidden;
+        background: linear-gradient(#87ceeb, #e0f6ff);
+    }
+
+    .press-space {
+        position: absolute;
+        bottom: 26vh;
+        right: 18vw;
+        z-index: 2;
+        animation: press-space-animation 1s infinite;
+    }
+
+    .pipe {
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        animation: pipe-animation 0.9s infinite linear;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .logo {
+        position: absolute;
+        right: 33vw;
+        bottom: 82vh;
+        width: 70%;
+        z-index: 1;
+    }
+
+    .game-board {
+        position: relative;
+        width: 92%;
+        height: 500px;
+        border-bottom: 15px solid rgb(35, 160, 35);
+        margin: 0 auto;
+        overflow: hidden;
+        background: linear-gradient(#87ceeb, #e0f6ff);
+    }
+
+    .press-space {
+        position: absolute;
+        content: url(../marioImages/control2.png);
+        bottom: 32vh;
+        right: 31vw;
+        z-index: 2;
+        animation: press-space-animation 1s infinite;
+    }
+
+    .pipe {
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        animation: pipe-animation 0.9s infinite linear;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        position: absolute;
+        right: 23vw;
+        bottom: 82vh;
+        width: 90%;
+        z-index: 1;
+    }
+
+    .game-board {
+        position: relative;
+        width: 92%;
+        height: 500px;
+        border-bottom: 15px solid rgb(35, 160, 35);
+        margin: 0 auto;
+        overflow: hidden;
+        background: linear-gradient(#87ceeb, #e0f6ff);
+    }
+
+    .press-space {
+        position: absolute;
+        content: url(../marioImages/control2.png);
+        bottom: 32vh;
+        right: 24vw;
+        z-index: 2;
+        animation: press-space-animation 1s infinite;
+    }
+
+    .pipe {
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        animation: pipe-animation 0.9s infinite linear;
+    }
+}
+
+@media (max-width: 350px) {
+    .press-space {
+        display: none;
+    }
+}
+
+@media (max-height: 600px) {
+    .logo {
+        position: absolute;
+        right: 23vw;
+        bottom: 82vh;
+        width: 90%;
+        z-index: 1;
+    }
+
+    .game-board {
+        position: relative;
+        width: 92%;
+        height: 75vh;
+        border-bottom: 15px solid rgb(35, 160, 35);
+        margin: 0 auto;
+        overflow: hidden;
+        background: linear-gradient(#87ceeb, #e0f6ff);
+    }
+
+    .press-space {
+        position: absolute;
+        content: url(../marioImages/control2.png);
+        bottom: 27vh;
+        right: 32vw;
+        z-index: 2;
+        animation: press-space-animation 1s infinite;
+    }
+
+    .pipe {
+        position: absolute;
+        bottom: 0;
+        width: 10vh;
+        animation: pipe-animation 0.9s infinite linear;
+    }
+
+    .mario {
+        position: absolute;
+        width: 30vh;
+        bottom: 0;
+        z-index: 3;
+    }
+}
+
+@media (max-height: 600px) {
+    .logo {
+        position: absolute;
+        right: 41.5vw;
+        bottom: 82vh;
+        width: 53%;
+        z-index: 1;
+    }
+
+    .game-board {
+        position: relative;
+        width: 92%;
+        height: 75vh;
+        border-bottom: 15px solid rgb(35, 160, 35);
+        margin: 0 auto;
+        overflow: hidden;
+        background: linear-gradient(#87ceeb, #e0f6ff);
+    }
+
+    .press-space {
+        display: none;
+    }
+
+    .pipe {
+        position: absolute;
+        bottom: 0;
+        width: 10vh;
+        animation: pipe-animation 0.9s infinite linear;
+    }
+
+    .mario {
+        position: absolute;
+        width: 30vh;
+        bottom: 0;
+        z-index: 3;
+    }
+}
